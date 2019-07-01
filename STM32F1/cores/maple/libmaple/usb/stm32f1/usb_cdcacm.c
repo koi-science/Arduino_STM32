@@ -85,8 +85,8 @@ static void usbSetDeviceAddress(void);
  */
 
 /* FIXME move to Wirish */
-#define LEAFLABS_ID_VENDOR                0x1EAF
-#define MAPLE_ID_PRODUCT                  0x0004
+#define LEAFLABS_ID_VENDOR                0x1209
+#define MAPLE_ID_PRODUCT                  0xD11D
 static const usb_descriptor_device usbVcomDescriptor_Device =
     USB_CDCACM_DECLARE_DEV_DESC(LEAFLABS_ID_VENDOR, MAPLE_ID_PRODUCT);
 

@@ -1,5 +1,9 @@
 #!/bin/bash
-$(dirname $0)/stlink/st-flash write "$4" 0x8000000
+
+set -x
+
+st-flash --format ihex write "$4"
+# 0x8000000
 exit 0
 
 ## Remove the lines 2 and 3 (above) if you want this script to wait until the Serial device has been enumerated and loaded before the script exits
@@ -32,7 +36,8 @@ USBRESET=$(which usb-reset) || USBRESET="./usb-reset"
 LEAF_STATUS=$(leaf_status)
 echo "USB Status [$LEAF_STATUS]"
 
-$(dirname $0)/stlink/st-flash write "$4" 0x8000000
+$(dirname $0)/stlink/st-flash write "$4"
+# 0x8000000
 
 sleep 4
 # Reset the usb device to bring up the tty rather than DFU
